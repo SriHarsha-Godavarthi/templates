@@ -1,0 +1,11 @@
+{
+  "name": "@package/webapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@package/components": "1.0.0",
+    "@package/api": "1.0.0"
+  }
+}

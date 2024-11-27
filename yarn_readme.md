@@ -3,8 +3,11 @@
 1. add a dependency
    syntax: 
    yarn add --dev|--peer|--optional|<empty> [package_name]
+   
    # install by specifying either a dependency version or a tag
+   
    yarn add --dev|--peer|--optional|<empty> [package_name]@[version]
+
    yarn add --dev|--peer|--optional|<empty> [package_name]@[tag]
 
    Flags: -
@@ -15,7 +18,9 @@
     c) --optional (to add optionalDependencies)<!-- specify dependencies that are not critical for your project to function. If these dependencies fail to install for any reason (e.g., unsupported platform, missing libraries), the installation process will continue without throwing an error. -->
 # Upgrading a dependency
 yarn upgrade [package]
+
 yarn upgrade [package]@[version]
+
 yarn upgrade [package]@[tag]
 
 # Removing a dependency
