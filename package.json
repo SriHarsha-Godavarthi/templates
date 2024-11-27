@@ -1,0 +1,13 @@
+{
+  "name": "flights",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [],
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    
+  },"private": true
+}
