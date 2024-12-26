@@ -1,0 +1,41 @@
+{
+  "name": "@packages/webapp",
+  "version": "1.0.0",
+  "description": "interation of components into pages",
+  "main": "index.js",
+  "author": "harsha",
+  "license": "MIT",
+  "module": "false",
+  "private": true,
+  "devDependencies": {
+    "@packages/backend_api": "1.0.0",
+    "@packages/components": "1.0.0",
+    "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.0",
+    "react-router-dom": "^6.21.1",
+    "style-loader": "^3.3.3",
+    "typescript": "^5.3.3",
+    "url-loader": "^4.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "peerDependencies": {},
+  "scripts": {
+    "run:app": "webpack serve --mode development --hot --open",
+    "start:app": "webpack-dev-server --open --mode development --hot",
+    "build:app": "webpack --mode production"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
