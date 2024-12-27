@@ -1,56 +1,61 @@
-# add, upgrade, or remove dependencies(each will automaticallly update package.json and yarn.lock file)
+# Managing Dependencies with Yarn
 
-1. add a dependency
-   syntax: 
-   yarn add --dev|--peer|--optional|<empty> [package_name]
-   
-   # install by specifying either a dependency version or a tag
-   
-   yarn add --dev|--peer|--optional|<empty> [package_name]@[version]
+## Adding Dependencies
+To add a new dependency to your project, use one of the following commands based on the type of dependency:
 
-   yarn add --dev|--peer|--optional|<empty> [package_name]@[tag]
+```bash
+yarn add [package_name]          # Regular dependency
+yarn add --dev [package_name]    # Development dependency
+yarn add --peer [package_name]   # Peer dependency
+yarn add --optional [package_name] # Optional dependency
+```
 
-   Flags: -
-   a) --dev (to add devDependencies ) <!-- only required during the development process, not in the  production environment -->
-   
-   b) --peer (to add peerDependencies)  <!--required specific version but user must install manually unlike devDependencies and dependencies install automatically
-    -->
-    c) --optional (to add optionalDependencies)<!-- specify dependencies that are not critical for your project to function. If these dependencies fail to install for any reason (e.g., unsupported platform, missing libraries), the installation process will continue without throwing an error. -->
-# Upgrading a dependency
-yarn upgrade [package]
+To specify a version or a tag:
+```bash
+yarn add [package_name]@[version]  # Specific version
+yarn add [package_name]@[tag]      # Specific tag
+```
 
-yarn upgrade [package]@[version]
+### Flags:
+- `--dev`: Add to devDependencies
+- `--peer`: Add to peerDependencies
+- `--optional`: Add to optionalDependencies
 
-yarn upgrade [package]@[tag]
+## Upgrading Dependencies
+To upgrade an existing dependency:
+```bash
+yarn upgrade [package]            # Upgrade to latest
+yarn upgrade [package]@[version]  # Specific version
+yarn upgrade [package]@[tag]      # Specific tag
+```
 
-# Removing a dependency
+## Removing Dependencies
+To remove a dependency:
+```bash
 yarn remove [package]
+```
 
-# versioning 
-[major].[minor].[patch] and looks like one of these: 3.14.1
+## Versioning
+Semantic versioning follows the pattern `[major].[minor].[patch]`:
+- **major**: Incompatible or breaking changes
+- **minor**: New functionality that is backwards-compatible
+- **patch**: Backwards-compatible bug fixes
 
-major - incompitable/breaking
-minor - new functionality & backwards-compatible
-patch - minor bug fixes & backwards-compatible
+## Version Ranges
+Specify which versions of a dependency are acceptable:
+- **Comparators**: `<`, `<=`, `>`, `>=`, `=`
+- **Intersections**: Combine comparators, e.g., `>=2.3.1 <4.3.1`
+- **Union**: Use `||`, e.g., `<=2.0.0 || >3.1.4`
 
-# Version ranges
-version range is to specify which versions of a dependency will work for your code
+### Pre-release Tags
+Specify pre-release versions by using tags.
 
-1. Comparators
-    Eg: >=2.0.0 <3.1.4
-   types of comparators 
-    a) <
-    b) <=
-    c) >
-    d) =>
-    e) =
+### Advanced Version Ranges
+- **Hyphen Ranges (-)**: `2.0.0 - 3.1.4` is expanded to `>=2.0.0 <=3.1.4`
+- **X-Ranges**: Use `X`, `x`, or `*` to specify flexible versions, e.g., `3.1.x`
+- **Tilde Ranges (~)**: allow Minor updates within the specified minor version
+- **Caret Ranges (^)**: Updates that do not modify the left-most non-zero digit
 
-2. Intersections (<whitespace>)
-       by combining with <whitespace>
-       >=2.3.1 <4.3.1 (greater than or equal to 2.3.1 and less than 4.3.1)
-3. Union (||)
-           <=2.0.0 || >3.1.4
-4. Pre-release tags
 
 # Advanced version ranges
 
